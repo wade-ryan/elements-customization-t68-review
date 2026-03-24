@@ -7,11 +7,11 @@
     <style>
       :root {
         color-scheme: dark;
-        --bg: #0d0f10;
-        --panel: #171a1c;
-        --panel-border: #2a3135;
+        --bg: #0b0d0e;
+        --panel: rgba(21, 25, 27, 0.92);
+        --panel-border: #273136;
         --text: #f5f7f8;
-        --muted: #9eabb3;
+        --muted: #98a6ae;
         --accent: #49f196;
       }
 
@@ -22,27 +22,58 @@
       body {
         margin: 0;
         font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        background: linear-gradient(180deg, #0d0f10 0%, #121618 100%);
+        background:
+          radial-gradient(circle at top left, rgba(73, 241, 150, 0.09), transparent 34%),
+          linear-gradient(180deg, #0b0d0e 0%, #121618 100%);
         color: var(--text);
       }
 
       main {
-        width: min(1200px, calc(100vw - 32px));
+        width: min(1280px, calc(100vw - 32px));
         margin: 0 auto;
-        padding: 32px 0 64px;
+        padding: 32px 0 72px;
       }
 
       h1 {
-        margin: 0 0 8px;
-        font-size: 32px;
-        line-height: 1.1;
+        margin: 0 0 10px;
+        font-size: 34px;
+        line-height: 1.08;
       }
 
       .intro {
+        max-width: 880px;
         margin: 0 0 28px;
         color: var(--muted);
         font-size: 16px;
-        line-height: 1.5;
+        line-height: 1.55;
+      }
+
+      .summary {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 14px;
+        margin-bottom: 28px;
+      }
+
+      .summary-card {
+        border: 1px solid var(--panel-border);
+        border-radius: 16px;
+        background: var(--panel);
+        padding: 16px 18px;
+      }
+
+      .summary-card strong {
+        display: block;
+        color: var(--accent);
+        font-size: 12px;
+        letter-spacing: 0.08em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+      }
+
+      .summary-card span {
+        font-size: 15px;
+        line-height: 1.45;
       }
 
       .story-grid {
@@ -51,11 +82,11 @@
       }
 
       .story {
-        background: rgba(23, 26, 28, 0.92);
+        background: var(--panel);
         border: 1px solid var(--panel-border);
         border-radius: 18px;
         padding: 18px;
-        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.25);
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.24);
       }
 
       .story-header {
@@ -76,16 +107,15 @@
 
       .story-title {
         margin: 0;
-        font-size: 19px;
-        line-height: 1.35;
+        font-size: 18px;
+        line-height: 1.38;
       }
 
       .story video {
         width: 100%;
-        max-width: 100%;
-        border-radius: 12px;
-        background: #000;
         display: block;
+        background: #000;
+        border-radius: 12px;
       }
 
       .story-link {
@@ -105,164 +135,71 @@
     <main>
       <h1>Elements Customization Review</h1>
       <p class="intro">
-        Green-run user-story videos from the isolated feature worktree. The first six stories are the T68 pass and the next four are the T70 expansion pass.
+        Passing advisor-web user-story videos for ELE-110 and ELE-111. These were captured from the final green run
+        of the 18-story Playwright suite against the localhost advisor app and the AWS dev backend.
       </p>
 
-      <section class="story-grid">
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 1</span>
-            <h2 class="story-title">Hide Equity Rate and Insurance Rate for one client</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-1-client-hide.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-1-client-hide.webm">Open raw video</a>
+      <section class="summary">
+        <article class="summary-card">
+          <strong>Suite</strong>
+          <span>18 user-story e2e tests passed</span>
         </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 2</span>
-            <h2 class="story-title">Hide Business Term firm-wide for inherited clients</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-2-firm-hide-inherited.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-2-firm-hide-inherited.webm">Open raw video</a>
+        <article class="summary-card">
+          <strong>Scope</strong>
+          <span>Advisor web, scorecard, presentation, report, firm settings, client overrides</span>
         </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 3</span>
-            <h2 class="story-title">New client inherits updated firm defaults</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-3-new-client-inherits.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-3-new-client-inherits.webm">Open raw video</a>
+        <article class="summary-card">
+          <strong>Download Gate</strong>
+          <span>Report stories now assert real PDF responses and attachment filenames</span>
         </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 4</span>
-            <h2 class="story-title">Client override diverges from hidden firm default</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-4-client-override.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-4-client-override.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 5</span>
-            <h2 class="story-title">Rename propagates to scorecard, presentation, and report</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-5-rename-propagation.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-5-rename-propagation.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 6</span>
-            <h2 class="story-title">Maximum-length label stays contained in the tile</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-6-overflow-contained.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-6-overflow-contained.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 7</span>
-            <h2 class="story-title">Client override reverts cleanly back to inherit</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-7-revert-to-inherit.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-7-revert-to-inherit.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 8</span>
-            <h2 class="story-title">Firm rename and visibility persist after reload and navigation</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-8-reload-persistence.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-8-reload-persistence.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 9</span>
-            <h2 class="story-title">Renamed report download uses the customized display name</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-9-report-download-name.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-9-report-download-name.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 10</span>
-            <h2 class="story-title">Presentation options stay stable after Elements are hidden</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-10-presentation-no-regression.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-10-presentation-no-regression.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 11</span>
-            <h2 class="story-title">Client detail route download uses the customized report name</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-11-client-detail-download-name.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-11-client-detail-download-name.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 12</span>
-            <h2 class="story-title">Presentation detail route download uses the customized report name</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-12-presentation-detail-download-name.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-12-presentation-detail-download-name.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 13</span>
-            <h2 class="story-title">Cross-client divergence stays stable while switching between clients</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-13-cross-client-divergence.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-13-cross-client-divergence.webm">Open raw video</a>
-        </article>
-
-        <article class="story">
-          <div class="story-header">
-            <span class="story-number">Story 14</span>
-            <h2 class="story-title">Restoring a hidden firm default makes inherited clients pick the tile back up</h2>
-          </div>
-          <video controls preload="metadata">
-            <source src="story-14-restore-firm-default.webm" type="video/webm" />
-          </video>
-          <a class="story-link" href="story-14-restore-firm-default.webm">Open raw video</a>
+        <article class="summary-card">
+          <strong>UX Edge Cases</strong>
+          <span>Overflow, trim/save behavior, and 18-character hard-stop included</span>
         </article>
       </section>
+
+      <section class="story-grid" id="story-grid"></section>
     </main>
+
+    <script>
+      const stories = [
+        ["01", "Hide Equity Rate and Insurance Rate for one client", "story-01-client-hide.webm"],
+        ["02", "Hide Business Term firm-wide for inherited clients", "story-02-firm-hide-inherited.webm"],
+        ["03", "New client inherits updated firm defaults", "story-03-new-client-inherits.webm"],
+        ["04", "Client override diverges from hidden firm default", "story-04-client-override.webm"],
+        ["05", "Rename propagates to scorecard, presentation, and report preview", "story-05-rename-propagation.webm"],
+        ["06", "Maximum-length label stays contained in the presentation tile", "story-06-overflow-contained.webm"],
+        ["07", "Client override reverts cleanly back to inherit", "story-07-revert-to-inherit.webm"],
+        ["08", "Firm rename and visibility persist after reload and navigation", "story-08-reload-persistence.webm"],
+        ["09", "Renamed report download uses the customized display name", "story-09-report-download-name.webm"],
+        ["10", "Presentation options stay stable after Elements are hidden", "story-10-presentation-no-regression.webm"],
+        ["11", "Client detail route download uses the customized report name", "story-11-client-detail-download-name.webm"],
+        ["12", "Presentation detail route download uses the customized report name", "story-12-presentation-detail-download-name.webm"],
+        ["13", "Cross-client divergence stays stable while switching clients", "story-13-cross-client-divergence.webm"],
+        ["14", "Restoring a hidden firm default reappears for inherited clients", "story-14-restore-firm-default.webm"],
+        ["15", "Every report-backed client detail route uses the customized report name", "story-15-client-route-family.webm"],
+        ["16", "Every report-backed presentation detail route uses the customized report name", "story-16-presentation-route-family.webm"],
+        ["17", "Leading and trailing spaces save as a trimmed display name", "story-17-trimmed-save.webm"],
+        ["18", "Typing past the 18-character limit hard-stops at the design-safe maximum", "story-18-limit-hard-stop.webm"],
+      ];
+
+      const grid = document.getElementById("story-grid");
+      grid.innerHTML = stories
+        .map(
+          ([number, title, file]) => `
+            <article class="story">
+              <div class="story-header">
+                <span class="story-number">Story ${number}</span>
+                <h2 class="story-title">${title}</h2>
+              </div>
+              <video controls preload="metadata">
+                <source src="${file}" type="video/webm" />
+              </video>
+              <a class="story-link" href="${file}">Open raw video</a>
+            </article>
+          `
+        )
+        .join("");
+    </script>
   </body>
 </html>
