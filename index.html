@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elements Customization T68 Videos</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        --bg: #0d0f10;
+        --panel: #171a1c;
+        --panel-border: #2a3135;
+        --text: #f5f7f8;
+        --muted: #9eabb3;
+        --accent: #49f196;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: linear-gradient(180deg, #0d0f10 0%, #121618 100%);
+        color: var(--text);
+      }
+
+      main {
+        width: min(1200px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 32px 0 64px;
+      }
+
+      h1 {
+        margin: 0 0 8px;
+        font-size: 32px;
+        line-height: 1.1;
+      }
+
+      .intro {
+        margin: 0 0 28px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.5;
+      }
+
+      .story-grid {
+        display: grid;
+        gap: 20px;
+      }
+
+      .story {
+        background: rgba(23, 26, 28, 0.92);
+        border: 1px solid var(--panel-border);
+        border-radius: 18px;
+        padding: 18px;
+        box-shadow: 0 18px 48px rgba(0, 0, 0, 0.25);
+      }
+
+      .story-header {
+        display: flex;
+        gap: 12px;
+        align-items: baseline;
+        margin-bottom: 10px;
+        flex-wrap: wrap;
+      }
+
+      .story-number {
+        color: var(--accent);
+        font-weight: 700;
+        font-size: 13px;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .story-title {
+        margin: 0;
+        font-size: 19px;
+        line-height: 1.35;
+      }
+
+      .story video {
+        width: 100%;
+        max-width: 100%;
+        border-radius: 12px;
+        background: #000;
+        display: block;
+      }
+
+      .story-link {
+        display: inline-block;
+        margin-top: 12px;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      .story-link:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Elements Customization T68 Review</h1>
+      <p class="intro">
+        Green-run user-story videos from the isolated feature worktree. Each video is embedded below with playback controls.
+      </p>
+
+      <section class="story-grid">
+        <article class="story">
+          <div class="story-header">
+            <span class="story-number">Story 1</span>
+            <h2 class="story-title">Hide Equity Rate and Insurance Rate for one client</h2>
+          </div>
+          <video controls preload="metadata">
+            <source src="story-1-client-hide.webm" type="video/webm" />
+          </video>
+          <a class="story-link" href="story-1-client-hide.webm">Open raw video</a>
+        </article>
+
+        <article class="story">
+          <div class="story-header">
+            <span class="story-number">Story 2</span>
+            <h2 class="story-title">Hide Business Term firm-wide for inherited clients</h2>
+          </div>
+          <video controls preload="metadata">
+            <source src="story-2-firm-hide-inherited.webm" type="video/webm" />
+          </video>
+          <a class="story-link" href="story-2-firm-hide-inherited.webm">Open raw video</a>
+        </article>
+
+        <article class="story">
+          <div class="story-header">
+            <span class="story-number">Story 3</span>
+            <h2 class="story-title">New client inherits updated firm defaults</h2>
+          </div>
+          <video controls preload="metadata">
+            <source src="story-3-new-client-inherits.webm" type="video/webm" />
+          </video>
+          <a class="story-link" href="story-3-new-client-inherits.webm">Open raw video</a>
+        </article>
+
+        <article class="story">
+          <div class="story-header">
+            <span class="story-number">Story 4</span>
+            <h2 class="story-title">Client override diverges from hidden firm default</h2>
+          </div>
+          <video controls preload="metadata">
+            <source src="story-4-client-override.webm" type="video/webm" />
+          </video>
+          <a class="story-link" href="story-4-client-override.webm">Open raw video</a>
+        </article>
+
+        <article class="story">
+          <div class="story-header">
+            <span class="story-number">Story 5</span>
+            <h2 class="story-title">Rename propagates to scorecard, presentation, and report</h2>
+          </div>
+          <video controls preload="metadata">
+            <source src="story-5-rename-propagation.webm" type="video/webm" />
+          </video>
+          <a class="story-link" href="story-5-rename-propagation.webm">Open raw video</a>
+        </article>
+
+        <article class="story">
+          <div class="story-header">
+            <span class="story-number">Story 6</span>
+            <h2 class="story-title">Maximum-length label stays contained in the tile</h2>
+          </div>
+          <video controls preload="metadata">
+            <source src="story-6-overflow-contained.webm" type="video/webm" />
+          </video>
+          <a class="story-link" href="story-6-overflow-contained.webm">Open raw video</a>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
